@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Todos-app</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="header__title">To-do App</h1>
+            <h2 class="header__subtitle">What do you need to do?</h2>
+        </div>
+    </div>
+
+    <div id="app">
+        <div class="actions">
+            <div class="actions__container">
+                <input id="filter-todo" class="input" type="text" placeholder="Filter todos" v-model="textToFilter">
+                <label class="checkbox">
+                    <input id="hide-completed" type="checkbox" v-model="hideCompleted">Hide completed
+                </label>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="todos">
+                <!-- Tantos todos como elementos hay en el estado-->
+                <div v-for="todo in todos" :key="todo.id">
+                    <label :id="todo.id" class="list-item" @dblclick="toggleCompleted(todo.id)"
+                        :class="{'list-item__hide': mustHideTask(todo.done, todo.text)}">
+                        <div class="list-item__container">
+                            <span :class="{ 'list-item__done': todo.done}">{{ todo.text }}</span>
+                        </div>
+                        <span @click="removeItem(todo.id)" class="button button-text">Remove</span>
+                    </label>
+                </div>
+            </div>
+            <form @submit.prevent="addTodo" id="todo-form">
+                <input v-model="addTaskName" type="text" class="input" placeholder="New Todo" name="addTodo">
+                <button class="button">Submit</button>
+            </form>
+        </div>
+        <h2 v-if="todos.length==0">No items yet!</h2>
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+</body>
+
+</html>
