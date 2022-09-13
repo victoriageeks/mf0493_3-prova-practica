@@ -1,0 +1,16 @@
+{
+  "name": "practica-metodos-array",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run --reporter verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^0.23.2"
+  }
+}
