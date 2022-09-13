@@ -14,7 +14,7 @@ Vue.createApp({
             console.log("Add: ", this.addTaskName)
 
             // Actualizamos el estado
-            const id = uuidv4();
+            const id = uuid.v1();
 
             this.todos.push({
                 id,
