@@ -10,3 +10,6 @@
     return spiders.filter()
 }
 
+module.exprots = {
+    filterByVenom
+}
