@@ -28,7 +28,7 @@ Vue.createApp({
 
         removeItem(id) {
             console.log(id);
-            this.todos = this.todos; // apartado 3
+            this.todos = this.todos.filter(x => x.id != id); // apartado 3
         },
 
         toggleCompleted(id) {
@@ -49,6 +49,5 @@ Vue.createApp({
         mustHideTask(done, text) {
             return (done && this.hideCompleted) || !text.includes(this.textToFilter);
         }
-
     }
 }).mount('#app')
