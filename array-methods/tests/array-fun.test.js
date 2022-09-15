@@ -26,7 +26,7 @@ describe('filter method', () => {
 
     });
 
-    it('should return an empty array when no spiders meets the venominia criteria', () => {
+    it('should return an empty array when no spiders meet the venominia criteria', () => {
         const spiders = [{
             name: "Tarantula Goliat",
             venominia: 70
